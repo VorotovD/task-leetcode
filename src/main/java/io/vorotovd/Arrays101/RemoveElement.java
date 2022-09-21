@@ -1,4 +1,4 @@
-package Arrays101;
+package io.vorotovd.Arrays101;
 
 import java.util.Arrays;
 
