@@ -61,7 +61,7 @@ class SolutionFindPeakElement {
      * @param nums Подмассив значений
      * @return Значение левее середины подмассива
      */
-    public static int getLeftBorderOfMean(int med, int left, int[] nums) {
+    public int getLeftBorderOfMean(int med, int left, int[] nums) {
         if (med == left) {
             return nums[med];
         } else {
@@ -77,7 +77,7 @@ class SolutionFindPeakElement {
      * @param nums  Подмассив значений
      * @return Значение левее середины подмассива
      */
-    public static int getRightBorderOfMean(int med, int right, int[] nums) {
+    public int getRightBorderOfMean(int med, int right, int[] nums) {
         if (med == right) {
             return nums[med];
         } else {

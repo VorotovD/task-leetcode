@@ -12,7 +12,7 @@ package io.vorotovd.binarySearch;
  */
 public class FirstBadVersion {
     public static void main(String[] args) {
-        SolutionFirstBadVersion solution = new SolutionFirstBadVersion();
+        SolutionFirstBadVersion solution = new SolutionFirstBadVersion(10);
         System.out.println("First bad version" + solution.firstBadVersion(25));
 
     }
@@ -23,6 +23,10 @@ public class FirstBadVersion {
  * Класс для нахождения первой сломанной версии.
  */
 class SolutionFirstBadVersion extends VersionControl {
+    public SolutionFirstBadVersion(int firstBedVersion) {
+        super(firstBedVersion);
+    }
+
     /**
      * Метод возвращает первую сломанную версию из N версий
      *
@@ -52,6 +56,12 @@ class SolutionFirstBadVersion extends VersionControl {
  * была реализована простейшая предполагаемая версия класса VersionControl
  */
 class VersionControl {
+    int firstBedVersion;
+
+    public VersionControl(int firstBedVersion) {
+        this.firstBedVersion = firstBedVersion;
+    }
+
     /**
      * Метод для определения годности версии
      *
@@ -59,6 +69,6 @@ class VersionControl {
      * @return Булево значения годности версии
      */
     public boolean isBadVersion(int version) {
-        return version >= 10;
+        return version >= firstBedVersion;
     }
 }

@@ -16,13 +16,18 @@ package io.vorotovd.binarySearch;
 public class GuessNumberHigherOrLower {
     public static void main(String[] args) {
 
-        SolutionGuessNumberHigherOrLower search = new SolutionGuessNumberHigherOrLower();
+        SolutionGuessNumberHigherOrLower search = new SolutionGuessNumberHigherOrLower(8);
         System.out.println("Number that picked: " + search.guessNumber(10));
     }
 }
 
 
 class SolutionGuessNumberHigherOrLower extends GuessGame {
+
+    SolutionGuessNumberHigherOrLower(int guess) {
+        super(guess);
+    }
+
     /**
      * Метод поиска загаданного числа
      *
@@ -57,6 +62,12 @@ class SolutionGuessNumberHigherOrLower extends GuessGame {
  * была реализована простейшая предполагаемая версия класса GuessGame
  */
 class GuessGame {
+    final int guess;
+
+    GuessGame(int guess) {
+        this.guess = guess;
+    }
+
     /**
      * Forward declaration of guess API.
      *
@@ -67,9 +78,9 @@ class GuessGame {
      * int guess(int num);
      */
     public int guess(int num) {
-        if (num > 5) {
+        if (num > guess) {
             return -1;
-        } else if (num < 5) {
+        } else if (num < guess) {
             return 1;
         }
         return 0;
