@@ -27,8 +27,8 @@ class SolutionSqrtX {
         long right = x;
         while (right - left > 1) {
             long middle = (left + right) / 2;
-            long sqrtMiddle = middle * middle;
-            if (sqrtMiddle > x) {
+            long sqrMiddle = middle * middle;
+            if (sqrMiddle > x) {
                 right = middle;
             } else {
                 left = middle;
