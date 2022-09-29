@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class SearchForARangeTest {
 
+
     @Test
     public void rangeNormal() {
         int[] searchArea = {1, 2, 3, 4, 5, 5, 5, 6, 7};
@@ -25,7 +26,7 @@ public class SearchForARangeTest {
     }
 
     @Test
-    public void rangeByOne() {
+    public void rangeOneTargetInArea() {
         int[] searchArea = {1, 2, 3, 4, 5, 6, 7};
         int target = 5;
         SearchForARangeSolution test = new SearchForARangeSolution();
@@ -75,6 +76,31 @@ public class SearchForARangeTest {
         int target = 8;
         SearchForARangeSolution test = new SearchForARangeSolution();
         int[] expected = {-1, -1};
+        Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(test.searchRange(searchArea, target)));
+    }
+
+    @Test
+    public void rangeSmall1() {
+        int[] searchArea = {1,2};
+        int target = 1;
+        SearchForARangeSolution test = new SearchForARangeSolution();
+        int[] expected = {0, 0};
+        Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(test.searchRange(searchArea, target)));
+    }
+    @Test
+    public void rangeSmall2() {
+        int[] searchArea = {1,2};
+        int target = 2;
+        SearchForARangeSolution test = new SearchForARangeSolution();
+        int[] expected = {1, 1};
+        Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(test.searchRange(searchArea, target)));
+    }
+    @Test
+    public void rangeByOne() {
+        int[] searchArea = {2};
+        int target = 2;
+        SearchForARangeSolution test = new SearchForARangeSolution();
+        int[] expected = {0,0};
         Assertions.assertEquals(Arrays.toString(expected), Arrays.toString(test.searchRange(searchArea, target)));
     }
 }
