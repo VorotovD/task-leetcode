@@ -2,6 +2,12 @@ package io.vorotovd.RecursionI;
 
 import java.util.Stack;
 
+/**
+ * Given the head of a singly linked list, reverse the list, and return the reversed list.
+ * Constraints:
+ * The number of nodes in the list is the range [0, 5000].
+ * -5000 <= Node.val <= 5000
+ */
 public class ReverseLinkedList {
     public static void main(String[] args) {
 
@@ -44,6 +50,11 @@ public class ReverseLinkedList {
 }
 
 class ReverseLinkedListSolution {
+    /**
+     * Метод разворачивает LinkedList используя рекурсию
+     * @param head Голова LinkedList
+     * @return Новая голова, развернутого LinkedList
+     */
     public ListNode reverseByRecursion(ListNode head) {
         if(head == null) {
             return null;
@@ -62,6 +73,11 @@ class ReverseLinkedListSolution {
 
     }
 
+    /**
+     * Метод разворачивает LinkedList используя перебор
+     * @param head Голова LinkedList
+     * @return Новая голова, развернутого LinkedList
+     */
     public ListNode reverseListByBrutForce(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
         do {
